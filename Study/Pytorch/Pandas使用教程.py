@@ -11,3 +11,10 @@ with open(data_file,'w') as f:
 
 data=pd.read_csv(data_file)
 print(data)
+
+inputs=data.iloc[:,0:2]
+# inputs=inputs.fillna(inputs.mean())
+print(inputs)
+
+inputs=pd.get_dummies(inputs,dummy_na=True)
+print(inputs)
